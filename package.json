@@ -1,0 +1,42 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production",
+        "eslint": "./node_modules/.bin/eslint --quiet resources/js/",
+        "lint": "./node_modules/.bin/eslint resources/js/  --ext .js,.vue",
+        "lint:fix": "./node_modules/.bin/eslint resources/js/  --ext .js,.vue --fix",
+        "lint:js": "./node_modules/.bin/eslint resources/js/  --ext .js --fix",
+        "lint:vue": "./node_modules/.bin/eslint resources/js/  --ext .vue --fix"
+    },
+    "devDependencies": {
+        "axios": "^0.21",
+        "eslint": "^7.27.0",
+        "eslint-loader": "^4.0.2",
+        "eslint-plugin-vue": "^7.10.0",
+        "husky": "^6.0.0",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.36.0",
+        "sass-loader": "^12.1.0",
+        "vue-loader": "^15.9.7"
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.9.2",
+        "bootstrap": "^5.0.2",
+        "flatpickr": "^4.6.9",
+        "moment": "^2.29.1",
+        "popper.js": "^1.16.1",
+        "toastr": "^2.1.4",
+        "vue": "^2.6.14",
+        "vue-template-compiler": "^2.6.14",
+        "vuex": "^3.6.2"
+    }
+}
