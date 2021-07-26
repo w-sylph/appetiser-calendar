@@ -13,13 +13,10 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-public/assets
 *.bak
 *.sql
 *.tar.xz
-public/mix-manifest.json
 storage/*.index
 storage/*.index-journal
 package-lock.json
-public/fonts/vendor/
 **/.DS_Store

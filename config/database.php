@@ -2,6 +2,35 @@
 
 use Illuminate\Support\Str;
 
+$pgsqlDb = parse_url(getenv("DATABASE_URL"));
+
+$pgsqlHost = env('DB_HOST', '127.0.0.1');
+$pgsqlPort = env('DB_PORT', '5432');
+$pgsqlPath = env('DB_DATABASE', 'forge');
+$pgsqlUser = env('DB_USERNAME', 'forge');
+$pgsqlPass = env('DB_PASSWORD', '');
+
+if (isset($pgsqlDb["host"])) {
+    $pgsqlHost = $pgsqlDb["host"];
+}
+
+if (isset($pgsqlDb["port"])) {
+    $pgsqlPort = $pgsqlDb["port"];
+}
+
+if (isset($pgsqlDb["path"])) {
+    $pgsqlPath = ltrim($pgsqlDb["path"], "/");
+}
+
+if (isset($pgsqlDb["user"])) {
+    $pgsqlUser = $pgsqlDb["user"];
+}
+
+if (isset($pgsqlDb["pass"])) {
+    $pgsqlPass = $pgsqlDb["pass"];
+}
+
+
 return [
 
     /*
@@ -65,17 +94,15 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => $pgsqlHost,
+            'port' => $pgsqlPort,
+            'database' => $pgsqlPath,
+            'username' => $pgsqlUser,
+            'password' => $pgsqlPass,
             'charset' => 'utf8',
             'prefix' => '',
-            'prefix_indexes' => true,
             'schema' => 'public',
-            'sslmode' => 'prefer',
+            'sslmode' => 'require',
         ],
 
         'sqlsrv' => [
